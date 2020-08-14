@@ -21,6 +21,7 @@ Pre-Alpha:
 - [ ] display QED and tox filter limits interactively
 - [ ] calculate similarity to existing ligands, performed within notebook or separately? may need flexible interpretation of the CSV so the user can input their own filtration data. 
 - [ ] output data?? may have to be run locally, with a test version available on binder. 
+- [ ] some unit tests
 
 Beta:
 - [ ] tidy up landing page. 
