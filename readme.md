@@ -26,5 +26,6 @@ Beta:
 - [ ] tidy up landing page. 
 - [ ] email or save data to user's github.
 - [ ] run with a PPAR gamma (or other well known target) dataset
+- [ ] error handling. How to handle ranking ties? What about SMILES filtering or kekulization errors? empty columns? uninterpretable columns? accidental commas or tabs?
 
 
