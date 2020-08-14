@@ -5,7 +5,7 @@ This is a readme
 To-do:
 MVP: 
 - [x] make a to-do list
-- [ ] make a minimal dataframe - a few chemicals and ranking scores
+- [x] make a minimal dataframe - a few chemicals and ranking scores
 - [ ] make a minimal notebook that just loads the data
 - [ ] write a YAML file for binder
 - [ ] run and display ligands in binder
