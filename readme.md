@@ -7,7 +7,7 @@ MVP:
 - [x] make a to-do list
 - [x] make a minimal dataframe - a few chemicals and ranking scores
 - [ ] make a minimal notebook that just loads the data
-- [ ] write a YAML file for binder
+- [x] write a YAML file for binder
 - [ ] run and display ligands in binder
 
 Pre-Alpha:
