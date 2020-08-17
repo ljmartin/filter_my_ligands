@@ -15,11 +15,11 @@ Pre-Alpha:
 - [x] implement "landing page" i.e. some text in a notebook (streamlit?) that describes the project and gives instructions
 - [x] ability to read user-uploaded CSV files
 - [x] fingerprint
-- [ ] clustering options - HDSCAN, k-means, fastcluster? PARIS? 
-- [ ] display top N clusters interactively 
-- [ ] calculate QED score
+- [x] clustering options - HDSCAN, k-means, fastcluster? PARIS? 
+- [x] display top N clusters interactively 
+- [x] calculate QED score
 - [ ] calculate various tox. filters
-- [ ] fold QED, tox into a dataframe
+- [x] fold QED, tox into a dataframe
 - [ ] display QED and tox filter limits interactively
 - [ ] calculate similarity to existing ligands, performed within notebook or separately? may need flexible interpretation of the CSV so the user can input their own filtration data. 
 - [ ] output data?? may have to be run locally, with a test version available on binder. 
