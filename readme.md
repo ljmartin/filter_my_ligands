@@ -14,7 +14,7 @@ MVP:
 Pre-Alpha:
 - [x] implement "landing page" i.e. some text in a notebook (streamlit?) that describes the project and gives instructions
 - [x] ability to read user-uploaded CSV files
-- [ ] fingerprint
+- [x] fingerprint
 - [ ] clustering options - HDSCAN, k-means, fastcluster? PARIS? 
 - [ ] display top N clusters interactively 
 - [ ] calculate QED score
