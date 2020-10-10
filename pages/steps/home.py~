@@ -1,7 +1,7 @@
 """Home page shown when the user enters the application"""
 import streamlit as st
 
-def write(sesh=None):
+def write(sesh):
     """Used to write the page in the app.py file"""
     with st.spinner("Loading Home ..."):
         st.write(
@@ -20,7 +20,6 @@ SMILES codes of the molecules.
 
     """
         )
+    st.sidebar.title('Status:')
+    st.sidebar.write('Nothing yet')
 
-#    if st.button('move on:'):
-#        sesh.curr_page+=1
-#        fun(fun)

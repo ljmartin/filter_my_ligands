@@ -8,6 +8,12 @@ import pandas as pd
 import numpy as np
 import io
 
+st.beta_set_page_config(
+    page_icon=":shark:",
+    layout="wide",
+
+)
+
 st.title('Molecule filtering')
 st.sidebar.title('Molecule filtering')
 

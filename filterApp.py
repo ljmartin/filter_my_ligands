@@ -2,11 +2,7 @@ from rdkit import Chem
 from rdkit.Chem import Draw
 from rdkit.Chem import rdFingerprintGenerator
 
-import src.steps.home
-import src.steps.upload
-import src.steps.cluster
-import src.steps.fingerprint
-import src.steps.filter
+from pages.steps import home, upload, cluster, fingerprint, fltr
 
 import SessionState
 import streamlit as st
@@ -14,17 +10,27 @@ import pandas as pd
 import numpy as np
 import io
 
+st.beta_set_page_config(
+    page_icon=":shark:",
+    layout="wide",
 
+)
 
 PAGES = {
-    "Home": src.steps.home,
-    "Upload": src.steps.upload,
-    "Fingerprint": src.steps.fingerprint,
-    "Cluster": src.steps.cluster,
-    "Filter": src.steps.filter
+    "Home": home,
+    "Upload Mols.": upload,
+     "Fingerprint": fingerprint,
+    "Cluster": cluster,
+    "Filter": fltr
 }
 
-sesh = SessionState.get(file_uploaded=False, mols=[], fp = [], csv=None, )
+sesh = SessionState.get(predicted_uploaded=False,
+                        known_uploaded=False,
+                        predicted_mols=[],
+                        known_mols=[],
+                        df_predicted = None,
+                        df_known = None,
+                        fp = [], csv=None, )
 
 
 def main():

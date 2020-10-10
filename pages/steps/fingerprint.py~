@@ -1,26 +1,24 @@
 """Home page shown when the user enters the application"""
 import streamlit as st
 import pandas as pd
-import numpy as np
 
 from rdkit.Chem import rdFingerprintGenerator
 
 
 def write_fingerprints(sesh):
-
     
     option = st.selectbox('What fingerprint?',
                           ('choose one', 'Morgan',))
     
-    if option in ['Morgan', 'MACCS']:
+    if option in ['Morgan']:
         if st.button('Generate fingerprints'):
             pbar = st.progress(0)
             gen_mo = rdFingerprintGenerator.GetMorganGenerator(512)
-            for count, mol in enumerate(sesh.df['mols']):
+            for count, mol in enumerate(sesh.mols):
                 fp = rdFingerprintGenerator
                 sesh.fp.append(gen_mo.GetFingerprint(mol))
-                pbar.progress(int((count+1)/len(sesh.df)*100))
-            sesh.fp = np.array(sesh.fp)
+                pbar.progress(int((count+1)/len(sesh.mols)*100))
+                
 
 def write(sesh):
     """Used to write the page in the app.py file"""

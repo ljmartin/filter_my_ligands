@@ -3,8 +3,10 @@ import streamlit as st
 import pandas as pd
 
 from rdkit import Chem
+from rdkit.Chem import Draw
 
-def write(sesh):
+
+def write(sesh=None):
     """Used to write the page in the app.py file"""
     with st.spinner("Loading About ..."):
 
@@ -18,9 +20,9 @@ Some markdown goes here.
     st.set_option('deprecation.showfileUploaderEncoding', False)
 
     if st.button('load test file'):
-        sesh.df = pd.read_csv('https://raw.githubusercontent.com/ljmartin/filter_my_ligands/master/minimal.csv')
+        sesh.df = pd.read_csv('https://raw.githubusercontent.com/ljmartin/filter_my_ligands/master/docking_sample.csv')
         st.write(sesh.df)
-        sesh.mols = [Chem.MolFromSmiles(i) for i in sesh.df['smiles']]
+        sesh.df['mols'] = [Chem.MolFromSmiles(i) for i in sesh.df['smiles']]
         st.write('made mols ✅')
     
     uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
@@ -32,5 +34,9 @@ Some markdown goes here.
         sesh.df = uploaded_data
 
         if st.button('Turn into rdkit molecules'):
-            sesh.mols = [Chem.MolFromSmiles(i) for i in sesh.df['smiles']]
+            sesh.df['mols'] = [Chem.MolFromSmiles(i) for i in sesh.df['smiles']]
             st.write('made mols ✅')
+            mols = [i for i in sesh.df['mols']]
+#            img =Draw.MolsToGridImage(mols, useSVG=True )
+#            st.write(img)
+            st.image( Draw.MolsToGridImage(mols[:10] ) )

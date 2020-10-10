@@ -9,14 +9,14 @@ def write(sesh):
 
         st.markdown(
             """## Cluster
-Here you can use create a single-linkage dendrogram to use for clustering.
+Some markdown initially
 """,
             unsafe_allow_html=True,
         )
 
     if st.button('Cluster!'):
-        sesh.clusters = linkage(sesh.fp, method='single', metric='dice')
-        st.write('Dendrogram calculated ✅')
+        sesh.clusters = linkage(sesh.fp, method='single')
+        st.write('bah')
     st.write(sesh.df)
-    if st.button('Show clusters'):
+    if st.button('Write out clusters?'):
         st.write(sesh.clusters)
